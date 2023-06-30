@@ -58,6 +58,7 @@
 
             <table class="table_deg">
                 <tr>
+                    <th>ID</th>
                     <th>Thời gian</th>
                     <th>Name</th>
                     <th>Email</th>
@@ -75,6 +76,7 @@
 
                 @forelse($orders as $order)
                     <tr>
+                        <td>{{$order->id}}</td>
                         <td>{{$order->created_at}}</td>
                         <td>{{$order->name}}</td>
                         <td>{{$order->email}}</td>

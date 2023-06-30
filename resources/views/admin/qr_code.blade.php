@@ -54,6 +54,9 @@
                     @csrf
                     <input type="file" name="qr_code" required="">
                     <br>
+                    <label for="id">ID</label>
+                    <input style="color: black" type="number" name="id" required="">
+                    <br>
                     <label for="name">Tên ch TK:</label>
                     <input style="color: black" type="text" name="name" required="">
                     <input type="submit" name="submit" class="btn btn-primary" value="Add QR Code">

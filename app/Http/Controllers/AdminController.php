@@ -304,6 +304,7 @@ class AdminController extends Controller
             $request->qr_code->move('images', $imagename);
             $qrcodeImg->qr_code = $imagename;
             $qrcodeImg->name = $request->name;
+            $qrcodeImg->id = $request->id;
 
             $qrcodeImg->save();
             return redirect()->back()->with('message', 'QR code Image Added Successfully');

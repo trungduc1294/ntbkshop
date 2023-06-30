@@ -54,6 +54,7 @@
 
                 <form action="{{url('/add_banner_sale')}}" method="post">
                     @csrf
+                    <input type="number" name="id" required="" placeholder="id" style="color:#000000;">
                     <input class="input_color" type="text" name="title" placeholder="Banner Title">
                     <input class="input_color" type="text" name="bannerContent" placeholder="Banner Content">
                     <input type="submit" name="submit" class="btn btn-primary" value="Add Catagory">
@@ -63,12 +64,14 @@
 
             <table class="center">
                 <tr>
+                    <th>Id</th>
                     <th>Banner Title</th>
                     <th>Banner Content</th>
                     <th>Action</th>
                 </tr>
                 @foreach($banners as $banner)
                     <tr>
+                        <td>{{$banner->id}}</td>
                         <td>{{$banner->title}}</td>
                         <td>{{$banner->content}}</td>
                         <td>
@@ -88,6 +91,7 @@
             <div class="div_center">
                 <form action="{{url('/add_banner_img')}}" method="post" enctype="multipart/form-data">
                     @csrf
+                    <input type="number" name="id" required="" placeholder="ID" style="color:#000000;">
                     <input type="file" name="image" required="">
                     <input type="submit" name="submit" class="btn btn-primary" value="Add Banner Image">
                 </form>

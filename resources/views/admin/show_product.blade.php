@@ -57,6 +57,7 @@
 
             <table class="center">
                 <tr class="th_color">
+                    <th class="th_deg">ID</th>
                     <th class="th_deg">Product Title</th>
                     <th class="th_deg">Description</th>
                     <th class="th_deg">Quantity</th>
@@ -69,6 +70,7 @@
                 </tr>
                 @foreach($products as $product)
                     <tr>
+                        <td>{{$product->id}}</td>
                         <td>{{$product->title}}</td>
                         <td>{{$product->description}}</td>
                         <td>{{$product->quantity}}</td>

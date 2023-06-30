@@ -36,6 +36,7 @@ class AdminController extends Controller
             $data->catagory_name = $request->catagory;
             $data->created_at = now()->setTimezone('Asia/Ho_Chi_Minh');
             $data->updated_at = now()->setTimezone('Asia/Ho_Chi_Minh');
+            $data->id = $request->id;
             $data->save();
             return redirect()->back()->with('message', 'Catagory Added Successfully');
         } else {
@@ -59,7 +60,8 @@ class AdminController extends Controller
     {
         if (Auth::user()->usertype == 1) {
             $catagory = Catagory::all();
-            return view('admin.product', compact('catagory'));
+            $products = Product::all();
+            return view('admin.product', compact('catagory', 'products'));
         } else {
             return redirect(url('/login'));
         }
@@ -69,6 +71,7 @@ class AdminController extends Controller
     {
         if (Auth::user()->usertype == 1) {
             $product = new Product();
+            $product->id = $request->id;
             $product->title = $request->title;
             $product->description = $request->description;
             $product->price = $request->price;
@@ -272,6 +275,7 @@ class AdminController extends Controller
             $banner = new Banner();
             $banner->title = $request->title;
             $banner->content = $request->bannerContent;
+            $banner->id = $request->id;
             $banner->save();
             return redirect()->back()->with('message', 'Banner Added Successfully');
         } else {
@@ -287,6 +291,7 @@ class AdminController extends Controller
             $imagename = time().'.'.$image->getClientOriginalExtension();
             $request->image->move('images', $imagename);
             $bannerImg->image = $imagename;
+            $bannerImg->id = $request->id;
 
             $bannerImg->save();
             return redirect()->back()->with('message', 'Banner Image Added Successfully');
@@ -462,6 +467,15 @@ class AdminController extends Controller
         return redirect()->back()->with('message', 'Shipper Choosed Successfully');
     }
 
+    public function delete_shipper($id)
+    {
+        $shipper = User::find($id);
+        $shipper->usertype = 0;
+        $shipper->save();
+
+        return redirect()->back()->with('message', 'Shipper Delete Successfully');
+    }
+
     public function search_user(Request $request)
     {
         if (Auth::user()->usertype == 1) {
@@ -514,5 +528,14 @@ class AdminController extends Controller
         $user->save();
 
         return redirect()->back()->with('message', 'admin Choosed Successfully');
+    }
+
+    public function delete_admin($id)
+    {
+        $admin = User::find($id);
+        $admin->usertype = 0;
+        $admin->save();
+
+        return redirect()->back()->with('message', 'admin delete Successfully');
     }
 }

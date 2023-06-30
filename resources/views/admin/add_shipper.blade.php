@@ -58,6 +58,7 @@
 
             <table class="table_deg">
                 <tr>
+                    <th>id</th>
                     <th>Tên</th>
                     <th>Email</th>
                     <th>Số điện thoại</th>
@@ -66,6 +67,7 @@
 
                 @forelse($users as $user)
                     <tr>
+                        <td>{{$user->id}}</td>
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
                         <td>{{$user->phone}}</td>
@@ -84,6 +86,7 @@
             <h1 style="margin-top: 60px" class="title_deg">Thông tin shipper</h1>
             <table class="table_deg">
                 <tr>
+                    <th>id</th>
                     <th>Tên</th>
                     <th>Email</th>
                     <th>Số điện thoại</th>
@@ -92,9 +95,13 @@
 
                 @forelse($shippers as $shipper)
                     <tr>
+                        <td>{{$shipper->id}}</td>
                         <td>{{$shipper->name}}</td>
                         <td>{{$shipper->email}}</td>
                         <td>{{$shipper->phone}}</td>
+                        <td>
+                            <a class="btn btn-info" href="{{url('delete_shipper', $shipper->id)}}">Xóa</a>
+                        </td>
                     </tr>
                 @empty
                     <tr>

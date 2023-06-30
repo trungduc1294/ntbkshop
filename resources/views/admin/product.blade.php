@@ -28,6 +28,36 @@
             padding-bottom: 15px;
         }
     </style>
+
+    <style>
+        .center {
+            margin: auto;
+            width: 50%;
+            text-align: center;
+            margin-top: 40px;
+            border: 3px solid white;
+        }
+
+        .font_size {
+            text-align: center;
+            font-size: 40px;
+            padding-top: 40px;
+        }
+
+        .img_size{
+            width: 150px;
+            height: 150px;
+        }
+
+        .th_color{
+            background-color: skyblue;
+            color: white;
+        }
+
+        .th_deg{
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
 
@@ -53,6 +83,11 @@
 
                 <form action="{{url('/add_product')}}" method="post" enctype="multipart/form-data">
                     @csrf
+
+                    <div class="div_design">
+                        <label>Product id</label>
+                        <input class="text_color" type="number" name="id" placeholder="Write a id" required="">
+                    </div>
 
                     <div class="div_design">
                         <label>Product title</label>
@@ -99,6 +134,41 @@
                     </div>
                 </form>
 
+
+                <table class="center">
+                    <tr class="th_color">
+                        <th class="th_deg">ID</th>
+                        <th class="th_deg">Product Title</th>
+                        <th class="th_deg">Description</th>
+                        <th class="th_deg">Quantity</th>
+                        <th class="th_deg">Catagory</th>
+                        <th class="th_deg">Price</th>
+                        <th class="th_deg">Discount Price</th>
+                        <th class="th_deg">Product Image</th>
+                        <th class="th_deg">Delete</th>
+                        <th class="th_deg">Edit</th>
+                    </tr>
+                    @foreach($products as $product)
+                        <tr>
+                            <td>{{$product->id}}</td>
+                            <td>{{$product->title}}</td>
+                            <td>{{$product->description}}</td>
+                            <td>{{$product->quantity}}</td>
+                            <td>{{$product->catagory}}</td>
+                            <td>{{$product->price}}</td>
+                            <td>{{$product->discount_price}}</td>
+                            <td>
+                                <img class="img_size" src="/product/{{$product->image}}">
+                            </td>
+                            <td>
+                                <a onclick="return confirm('Are you sure to delete it?')" class="btn btn-danger" href="{{url('delete_product', $product->id)}}">Delete</a>
+                            </td>
+                            <td>
+                                <a class="btn btn-success" href="{{url('update_product', $product->id)}}">Edit</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </table>
 
             </div>
         </div>

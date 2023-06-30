@@ -50,6 +50,7 @@
 
                 <form action="{{url('/add_catagory')}}" method="post">
                     @csrf
+                    <input type="number" name="id" required="" placeholder="ID" style="color: #000">
                     <input class="input_color" type="text" name="catagory" placeholder="Catagory name">
                     <input type="submit" name="submit" class="btn btn-primary" value="Add Catagory">
                 </form>
@@ -57,11 +58,13 @@
 
             <table class="center">
                 <tr>
+                    <td>ID</td>
                     <td>Catagory Name</td>
                     <td>Action</td>
                 </tr>
                 @foreach($data as $data)
                     <tr>
+                        <td>{{$data->id}}</td>
                         <td>{{$data->catagory_name}}</td>
                         <td>
                             <a

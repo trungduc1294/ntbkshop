@@ -102,6 +102,8 @@ Route::get('/add_shipper', [AdminController::class,'add_shipper']);
 
 Route::get('/choose_shipper/{id}', [AdminController::class,'choose_shipper']);
 
+Route::get('/delete_shipper/{id}', [AdminController::class,'delete_shipper']);
+
 Route::get('/search_user', [AdminController::class,'search_user']);
 
 Route::post('/set_shipper', [AdminController::class,'set_shipper']);
@@ -109,6 +111,8 @@ Route::post('/set_shipper', [AdminController::class,'set_shipper']);
 Route::get('/add_admin', [AdminController::class,'add_admin']);
 
 Route::get('/choose_admin/{id}', [AdminController::class,'choose_admin']);
+
+Route::get('/delete_admin/{id}', [AdminController::class,'delete_admin']);
 
 
 

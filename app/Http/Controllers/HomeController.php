@@ -50,15 +50,14 @@ class HomeController extends Controller
                     'total_processing'));
         }
         elseif ($usertype == '2') {
-            $today = date('Y-m-d');
             $userID = Auth::id();
             $orders = Order::where('shipper_id', $userID)->get();
             $qrCode = QrCode::where('status', 'active')->get()->first();
-            $today_orders = Order::where('shipper_id', $userID)
-                ->where('created_at', 'like', '%'.$today.'%')
-                ->get();
+//            $today_orders = Order::where('shipper_id', $userID)
+//                ->where('created_at', 'like', '%'.$today.'%')
+//                ->get();
 
-            return view('shipper.homepage', compact('orders', 'today_orders', 'qrCode'));
+            return view('shipper.homepage', compact('orders', 'qrCode'));
         }
         else {
             $data['comments'] = Comment::all();

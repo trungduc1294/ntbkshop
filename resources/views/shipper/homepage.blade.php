@@ -84,7 +84,7 @@
             <th>Action</th>
         </tr>
 
-        @forelse($today_orders as $order)
+        @forelse($orders as $order)
             <tr>
                 <td>{{$order->name}}</td>
                 <td>{{$order->phone}}</td>

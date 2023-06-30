@@ -99,7 +99,15 @@ class HomeController extends Controller
                 return redirect()->back();
             }
             else {
+                $current_index = Cart::orderBy('id', 'desc')->get('id')->first();
+                if ($current_index) {
+                    $current_index = $current_index->id + 1;
+                } else {
+                    $current_index = 0;
+                }
+
                 $cart = new Cart();
+                $cart->id = $current_index;
                 $cart->name = $user->name;
                 $cart->email = $user->email;
                 $cart->phone = $user->phone;

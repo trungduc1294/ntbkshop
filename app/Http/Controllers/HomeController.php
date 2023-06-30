@@ -158,7 +158,15 @@ class HomeController extends Controller
         $data = Cart::where('user_id', Auth::user()->id)->get();
 
         foreach ($data as $item) {
+            $current_index = Order::orderBy('id', 'desc')->get('id')->first();
+            if ($current_index) {
+                $current_index = $current_index->id + 1;
+            } else {
+                $current_index = 1;
+            }
+
             $order = new Order();
+            $order->id = $current_index;
             $order->name = $item->name;
             $order->email = $item->email;
             $order->phone = $item->phone;

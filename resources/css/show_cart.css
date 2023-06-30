@@ -1,0 +1,21 @@
+.center {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    padding: 30px;
+}
+
+table, th, td {
+    border: 1px solid grey;
+}
+
+th {
+    font-size: 24px;
+    padding: 5px;
+    background-color: skyblue;
+}
+
+.total_deg {
+    font-size: 20px;
+    padding: 40px;
+}

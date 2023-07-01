@@ -165,6 +165,17 @@ class AdminController extends Controller
         }
     }
 
+    public function delete_order($id)
+    {
+        if (Auth::user()->usertype == 1) {
+            $data = Order::find($id);
+            $data->delete();
+            return redirect()->back()->with('message', 'Order Deleted Successfully');
+        } else {
+            return redirect(url('/login'));
+        }
+    }
+
     public function today_order()
     {
         if (Auth::user()->usertype == 1) {

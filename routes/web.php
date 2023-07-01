@@ -58,6 +58,8 @@ Route::post('/update_product_confirm/{id}', [AdminController::class,'update_prod
 
 Route::get('/order', [AdminController::class,'order']);
 
+Route::get('/delete_order/{id}', [AdminController::class,'delete_order']);
+
 Route::get('/today_order', [AdminController::class,'today_order']);
 
 Route::get('/delivered/{id}', [AdminController::class,'delivered']);

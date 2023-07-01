@@ -72,6 +72,7 @@
                     <th>Image</th>
                     <th>Delivered</th>
                     <th>Chọn shipper</th>
+                    <th>Xóa</th>
                 </tr>
 
                 @forelse($orders as $order)
@@ -104,12 +105,6 @@
                             @endif
 
                         </td>
-                        {{--                        <td>--}}
-                        {{--                            <a class="btn btn-secondary" href="{{url('/print_pdf', $order->id)}}">Print PDF</a>--}}
-                        {{--                        </td>--}}
-                        {{--                        <td>--}}
-                        {{--                            <a class="btn btn-info" href="{{url('send_email', $order->id)}}">Send email</a>--}}
-                        {{--                        </td>--}}
                         @if($order->shipper_id)
                             <td style="color: green">
                                 {{$order->shipper_name}}
@@ -127,6 +122,15 @@
                                     </select>
                                     <input type="submit" value="Assign" class="btn btn-primary">
                                 </form>
+                            </td>
+                        @endif
+                        @if($order->delivery_status == 'processing')
+                            <td>
+                                <a href="{{url('delete_order', $order->id)}}" class="btn btn-danger">Delete</a>
+                            </td>
+                        @else
+                            <td>
+                                <p style="color: red">Can't delete</p>
                             </td>
                         @endif
                     </tr>

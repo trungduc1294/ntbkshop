@@ -90,7 +90,7 @@
             <?php $totalPrice = 0 ?>
 
             @foreach($orders as $item)
-                @if($item->delivery_status != 'done')
+                @if($item->delivery_status != 'cash payment done' && $item->delivery_status != 'transfer payment done')
                     <tr>
                         <td>{{$item->product_title}}</td>
                         <td>{{$item->quantity}}</td>

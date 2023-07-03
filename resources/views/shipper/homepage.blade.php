@@ -37,23 +37,25 @@
             color: white;
         }
 
-        .qrImg{
+        .qrImg {
             width: 400px;
             height: 400px;
             margin: 0 auto;
         }
 
         @media screen and (max-width: 600px) {
-            .qrImg{
+            .qrImg {
                 width: 100%;
             }
 
-            table{
+            table {
                 width: 100%;
-                th, td{
-                    width: 40px;
-                }
+
+            th, td {
+                width: 40px;
             }
+        }
+
         }
     </style>
 </head>
@@ -92,13 +94,20 @@
                 <td>{{$order->product_title}}</td>
                 <td>{{$order->quantity}}</td>
                 <td>{{$order->price}}</td>
-                @if($order->delivery_status == "done")
+                @if($order->delivery_status == "cash payment done")
                     <td>
-                        <p style="color: green">Done</p>
+                        <p style="color: green">cash payment done</p>
+                    </td>
+                @elseif($order->delivery_status == "transfer payment done")
+                    <td>
+                        <p style="color: green">transfer payment done</p>
                     </td>
                 @else
                     <td>
-                        <a class="btn btn-info" href="{{url('done_order', $order->id)}}">Done</a>
+                        <a class="btn btn-info" href="{{url('cash_done_order', $order->id)}}">Tiền Mặt</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-info" href="{{url('transfer_done_order', $order->id)}}">Chuyển khoản</a>
                     </td>
                 @endif
             </tr>
@@ -117,13 +126,13 @@
 </div>
 
 
-    <!-- jQery -->
-    <script src="home/js/jquery-3.4.1.min.js"></script>
-    <!-- popper js -->
-    <script src="home/js/popper.min.js"></script>
-    <!-- bootstrap js -->
-    <script src="home/js/bootstrap.js"></script>
-    <!-- custom js -->
-    <script src="home/js/custom.js"></script>
+<!-- jQery -->
+<script src="home/js/jquery-3.4.1.min.js"></script>
+<!-- popper js -->
+<script src="home/js/popper.min.js"></script>
+<!-- bootstrap js -->
+<script src="home/js/bootstrap.js"></script>
+<!-- custom js -->
+<script src="home/js/custom.js"></script>
 </body>
 </html>

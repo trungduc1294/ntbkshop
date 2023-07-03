@@ -87,7 +87,7 @@
                         <td>{{$order->quantity}}</td>
                         <td>{{$order->price}}</td>
 
-                        @if($order->delivery_status == "done")
+                        @if($order->delivery_status == "done" or $order->delivery_status == "cash payment done" or $order->delivery_status == "transfer payment done")
                             <td style="color: #00d25b">{{$order->delivery_status}}</td>
                         @else
                             <td style="color: red">{{$order->delivery_status}}</td>

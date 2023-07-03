@@ -154,5 +154,7 @@ Route::get('/catagory_products/{id}', [HomeController::class,'category_products'
 
 
 
-Route::get('/done_order/{id}', [ShipperController::class,'done_order']);
+Route::get('/cash_done_order/{id}', [ShipperController::class,'cash_done_order']);
+
+Route::get('/transfer_done_order/{id}', [ShipperController::class,'transfer_done_order']);
 

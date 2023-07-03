@@ -152,6 +152,30 @@ class HomeController extends Controller
         return redirect()->back();
     }
 
+
+    public function set_destination()
+    {
+        if (Auth::id()) {
+            return view('home.set_destination');
+        } else {
+            return redirect()->route('login');
+        }
+
+    }
+
+    public function post_destination_form(Request $request)
+    {
+        $data = Cart::where('user_id', Auth::user()->id)->get();
+
+        foreach ($data as $item) {
+            $item->destination = $request->destination;
+            $item->save();
+        }
+
+        return view('home.confirm_order', compact('data'));
+    }
+
+
     public function cash_order()
     {
         $data = Cart::where('user_id', Auth::user()->id)->get();
@@ -177,6 +201,7 @@ class HomeController extends Controller
             $order->quantity = $item->quantity;
             $order->image = $item->image;
             $order->product_id = $item->product_id;
+            $order->destination = $item->destination;
 
             $order->payment_status = 'cash on delivery';
             $order->delivery_status = 'processing';

@@ -65,7 +65,6 @@
                     <th>ID</th>
                     <th>Thời gian</th>
                     <th>Name</th>
-                    <th>Email</th>
                     <th>Address</th>
                     <th>Phone</th>
                     <th>Product title</th>
@@ -84,8 +83,7 @@
                         <td>{{$order->id}}</td>
                         <td>{{$order->created_at}}</td>
                         <td>{{$order->name}}</td>
-                        <td>{{$order->email}}</td>
-                        <td>{{$order->address}}</td>
+                        <td>{{$order->destination}}</td>
                         <td>{{$order->phone}}</td>
                         <td>{{$order->product_title}}</td>
                         <td>{{$order->quantity}}</td>

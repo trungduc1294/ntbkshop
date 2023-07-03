@@ -50,7 +50,7 @@
         }
 
 
-        @media screen and (max-width:600px) {
+        @media screen and (max-width: 600px) {
             .center {
                 width: 100%;
                 padding: 0px;
@@ -61,7 +61,7 @@
                 font-size: 12px;
             }
 
-            .total_deg{
+            .total_deg {
                 font-size: 12px;
                 padding: 10px;
             }
@@ -97,7 +97,7 @@
 
             <?php $totalPrice = 0 ?>
 
-            @foreach($cart as $item)
+            @foreach($data as $item)
                 <tr>
                     <td>{{$item->product_title}}</td>
                     <td>{{$item->quantity}}</td>
@@ -119,16 +119,16 @@
         </div>
 
         <div>
-            <h1 style="font-size: 24px; padding-bottom: 15px">Hãy lựa chọn địa chỉ giao hàng</h1>
-{{--            <a href="{{url('cash_order')}}" class="btn btn-danger">Tạo đơn</a>--}}
-            <a href="{{url('set_destination')}}" class="btn btn-danger">Địa chỉ giao hàng</a>
+            <h1 style="font-size: 24px; padding-bottom: 15px">Bấm tạo đơn để chúng tôi nhận được thông tin nhé!</h1>
+            <a href="{{url('cash_order')}}" class="btn btn-danger">Tạo đơn</a>
+            {{--            <a href="{{url('set_destination.blade.php')}}" class="btn btn-danger">Tạo đơn</a>--}}
         </div>
     </div>
 
 
     <div class="cpy_">
         <p class="mx-auto">
-            ©  Nghệ Tĩnh Bách Khoa - Cháy hết mình, Tình Nghệ Tĩnh
+            © Nghệ Tĩnh Bách Khoa - Cháy hết mình, Tình Nghệ Tĩnh
         </p>
     </div>
 

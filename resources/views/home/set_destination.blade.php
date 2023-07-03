@@ -86,43 +86,11 @@
 
 
     <div class="center">
-        <table>
-            <tr>
-                <th>Product Title</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Image</th>
-                <th>Action</th>
-            </tr>
-
-            <?php $totalPrice = 0 ?>
-
-            @foreach($cart as $item)
-                <tr>
-                    <td>{{$item->product_title}}</td>
-                    <td>{{$item->quantity}}</td>
-                    <td>{{$item->price}}</td>
-                    <td><img src="/product/{{$item->image}}" alt="" width="100px" height="100px"></td>
-                    <td>
-                        <a onclick="confirmation(event)" class="btn btn-danger"
-                           href="{{url('/remove_cart', $item->id)}}">Remove</a>
-                    </td>
-                </tr>
-
-                    <?php $totalPrice += $item->price ?>
-            @endforeach
-
-        </table>
-
-        <div>
-            <h1 class="total_deg">Tổng giá: {{$totalPrice}}</h1>
-        </div>
-
-        <div>
-            <h1 style="font-size: 24px; padding-bottom: 15px">Hãy lựa chọn địa chỉ giao hàng</h1>
-{{--            <a href="{{url('cash_order')}}" class="btn btn-danger">Tạo đơn</a>--}}
-            <a href="{{url('set_destination')}}" class="btn btn-danger">Địa chỉ giao hàng</a>
-        </div>
+        <form action="{{url('post_destination_form')}}" method="post">
+            @csrf
+            <input type="text" name="destination" placeholder="Nhập địa chỉ nhận hàng">
+            <input type="submit" value="Xác nhận">
+        </form>
     </div>
 
 

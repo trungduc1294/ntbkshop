@@ -91,7 +91,7 @@
             <tr>
                 <td>{{$order->name}}</td>
                 <td>{{$order->phone}}</td>
-                <td>{{$order->address}}</td>
+                <td>{{$order->destination}}</td>
                 <td>{{$order->product_title}}</td>
                 <td>{{$order->quantity}}</td>
                 <td>{{$order->price}}</td>

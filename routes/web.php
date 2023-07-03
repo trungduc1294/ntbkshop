@@ -131,6 +131,10 @@ Route::get('/show_cart', [HomeController::class,'show_cart']);
 
 Route::get('/remove_cart/{id}', [HomeController::class,'remove_cart']);
 
+Route::get('/set_destination', [HomeController::class,'set_destination']);
+
+Route::post('/post_destination_form', [HomeController::class,'post_destination_form']);
+
 Route::get('/cash_order', [HomeController::class,'cash_order']);
 
 Route::get('/stripe/{totalPrice}', [HomeController::class,'stripe']);

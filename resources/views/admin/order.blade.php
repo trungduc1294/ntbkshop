@@ -56,6 +56,10 @@
                 </form>
             </div>
 
+            <div class="export_excel">
+                <a href="{{url('export_order')}}" class="btn btn-outline-primary">Export to Excel</a>
+            </div>
+
             <table class="table_deg">
                 <tr>
                     <th>ID</th>
@@ -145,12 +149,12 @@
 
     {{--Return Scroll position after reload--}}
     <script>
-        document.addEventListener("DOMContentLoaded", function(event) {
+        document.addEventListener("DOMContentLoaded", function (event) {
             var scrollpos = localStorage.getItem('scrollpos');
             if (scrollpos) window.scrollTo(0, scrollpos);
         });
 
-        window.onbeforeunload = function(e) {
+        window.onbeforeunload = function (e) {
             localStorage.setItem('scrollpos', window.scrollY);
         };
     </script>

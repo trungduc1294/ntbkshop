@@ -116,6 +116,9 @@ Route::get('/choose_admin/{id}', [AdminController::class,'choose_admin']);
 
 Route::get('/delete_admin/{id}', [AdminController::class,'delete_admin']);
 
+Route::get('/export_order', [AdminController::class,'export_order']);
+
+
 
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\OrderExport;
 use App\Models\Banner;
 use App\Models\BannerImg;
 use App\Models\Catagory;
@@ -15,6 +16,7 @@ use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AdminController extends Controller
 {
@@ -548,5 +550,9 @@ class AdminController extends Controller
         $admin->save();
 
         return redirect()->back()->with('message', 'admin delete Successfully');
+    }
+
+    public function export_order(){
+        return Excel::download(new OrderExport, 'orders.xlsx');
     }
 }

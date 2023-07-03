@@ -70,7 +70,8 @@
     <!-- end header section -->
 
     <div class="qrcode">
-        <img class="qrImg" src="{{asset('/images/'.$qrCode->qr_code)}}">
+{{--        <img class="qrImg" src="{{asset('/images/'.$qrCode->qr_code)}}">--}}
+        <img class="qrImg" src="{{asset('/images/tranminhduc.jpg')}}">
     </div>
 
     <h1 style="margin-top: 60px" class="title_deg">Đơn ship ngày hôm nay</h1>

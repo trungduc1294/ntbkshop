@@ -50,13 +50,13 @@
             @endif
 
             <div class="div_center">
-                <h2 class="h2_font">Add Banner Sale</h2>
+                <h2 class="h2_font">Thêm banner</h2>
 
                 <form action="{{url('/add_banner_sale')}}" method="post">
                     @csrf
                     <input type="number" name="id" required="" placeholder="id" style="color:#000000;">
-                    <input class="input_color" type="text" name="title" placeholder="Banner Title">
-                    <input class="input_color" type="text" name="bannerContent" placeholder="Banner Content">
+                    <input class="input_color" type="text" name="title" placeholder="Tiêu đề">
+                    <input class="input_color" type="text" name="bannerContent" placeholder="Nội dung">
                     <input type="submit" name="submit" class="btn btn-primary" value="Add Catagory">
                 </form>
 
@@ -65,8 +65,8 @@
             <table class="center">
                 <tr>
                     <th>Id</th>
-                    <th>Banner Title</th>
-                    <th>Banner Content</th>
+                    <th>Tiêu đề</th>
+                    <th>Nội dung</th>
                     <th>Action</th>
                 </tr>
                 @foreach($banners as $banner)
@@ -80,7 +80,7 @@
                                 href="{{url('delete_banner', $banner->id)}}"
                                 class="btn btn-danger"
                             >
-                                Delete
+                                Xóa
                             </a>
                         </td>
                     </tr>
@@ -100,9 +100,9 @@
             <table class="center">
                 <tr>
                     <th>Id</th>
-                    <th>Banner Image</th>
+                    <th>Ảnh banner</th>
                     <th>Action</th>
-                    <th>Show</th>
+                    <th>Lựa chọn</th>
                 </tr>
                 @foreach($bannerImgs as $bannerImg)
                     <tr>

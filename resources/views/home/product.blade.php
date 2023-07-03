@@ -29,7 +29,7 @@
                         <div class="option_container">
                             <div class="options">
                                 <a href="{{url('product_details', $products->id)}}" class="option1">
-                                    Product Detail
+                                    Xem chi tiết
                                 </a>
                                 <form action="{{url('add_cart', $products->id)}}" method="post" >
                                     @csrf
@@ -38,7 +38,7 @@
                                             <input type="number" name="quantity" value="1" min="1" style="width: 100px;">
                                         </div>
                                         <div class="col-md-4">
-                                            <input type="submit" value="Add To Cart">
+                                            <input type="submit" value="Thêm vào giỏ hàng">
                                         </div>
                                     </div>
                                 </form>
@@ -53,18 +53,18 @@
                             </h5>
                             @if($products->discount_price != null)
                                 <h6 style="color:red;">
-                                    Discount Price:
+                                    Giá ưu đãi:
                                     <br>
                                     ${{$products->discount_price}}
                                 </h6>
                                 <h6 style="text-decoration: line-through;color:blue;">
-                                    Price:
+                                    Giá:
                                     <br>
                                     {{$products->price}} vnd
                                 </h6>
                             @else
                                 <h6 style="color:blue;">
-                                    Price:
+                                    Giá:
                                     <br>
                                     {{$products->price }} vnd
                                 </h6>

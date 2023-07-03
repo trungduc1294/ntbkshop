@@ -64,15 +64,15 @@
                 <tr>
                     <th>ID</th>
                     <th>Thời gian</th>
-                    <th>Name</th>
-                    <th>Address</th>
-                    <th>Phone</th>
-                    <th>Product title</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
+                    <th>Tên</th>
+                    <th>Đại chỉ</th>
+                    <th>SĐT</th>
+                    <th>Tên sản phẩm</th>
+                    <th> Số lượng</th>
+                    <th>Giá</th>
 
-                    <th>Payment status</th>
-                    <th>Image</th>
+                    <th>Phương thức thanh toaán</th>
+                    <th>Ảnh</th>
                     <th>Delivered</th>
                     <th>Chọn shipper</th>
                     <th>Xóa</th>
@@ -117,7 +117,7 @@
                                     @csrf
                                     <input type="hidden" name="order_id" value="{{$order->id}}">
                                     <select name="shipper_id" id="" class="form-control">
-                                        <option value="">Select a shipper</option>
+                                        <option value="">Chọn shipper</option>
                                         @foreach($shippers as $shipper)
                                             <option value="{{$shipper->id}}">{{$shipper->name}}</option>
                                         @endforeach
@@ -128,11 +128,11 @@
                         @endif
                         @if($order->delivery_status == 'processing')
                             <td>
-                                <a href="{{url('delete_order', $order->id)}}" class="btn btn-danger">Delete</a>
+                                <a href="{{url('delete_order', $order->id)}}" class="btn btn-danger">Xóa</a>
                             </td>
                         @else
                             <td>
-                                <p style="color: red">Can't delete</p>
+                                <p style="color: red">Không thể xóa</p>
                             </td>
                         @endif
                     </tr>

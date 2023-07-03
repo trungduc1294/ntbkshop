@@ -16,7 +16,7 @@
             @csrf
 
             <div>
-                <x-label for="name" value="{{ __('Username') }}" />
+                <x-label for="name" value="{{ __('Tên đăng nhập:') }}" />
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
 
@@ -26,7 +26,7 @@
 {{--            </div>--}}
 
             <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
+                <x-label for="password" value="{{ __('Mật khẩu') }}" />
                 <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
             </div>
 

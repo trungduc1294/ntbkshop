@@ -88,11 +88,11 @@
     <div class="center">
         <table>
             <tr>
-                <th>Product Title</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Image</th>
-                <th>Action</th>
+                <th>Tên sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Giá</th>
+                <th>Hình ảnh</th>
+                <th>Tương tác</th>
             </tr>
 
             <?php $totalPrice = 0 ?>
@@ -105,7 +105,7 @@
                     <td><img src="/product/{{$item->image}}" alt="" width="100px" height="100px"></td>
                     <td>
                         <a onclick="confirmation(event)" class="btn btn-danger"
-                           href="{{url('/remove_cart', $item->id)}}">Remove</a>
+                           href="{{url('/remove_cart', $item->id)}}">Hủy</a>
                     </td>
                 </tr>
 

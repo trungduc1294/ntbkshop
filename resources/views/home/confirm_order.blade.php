@@ -88,11 +88,11 @@
     <div class="center">
         <table>
             <tr>
-                <th>Product Title</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Image</th>
-                <th>Action</th>
+                <th>Tên sản phẩm</th>
+                <th>số lượng</th>
+                <th>Giá</th>
+                <th>Hình ảnh</th>
+                <th>Tương tác</th>
             </tr>
 
             <?php $totalPrice = 0 ?>

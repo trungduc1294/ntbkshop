@@ -78,13 +78,13 @@
     <div class="center">
         <table>
             <tr>
-                <th>Product Title</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Payment status</th>
-                <th>Delivery status</th>
-                <th>Image</th>
-                <th>Action</th>
+                <th>Tên sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Giá</th>
+                <th>phương thức thanh toán</th>
+                <th>Tnh trạng đơn hàng</th>
+                <th>Hình ảnh</th>
+                <th>Tương tác</th>
             </tr>
 
             <?php $totalPrice = 0 ?>
@@ -100,7 +100,7 @@
                         <td><img src="/product/{{$item->image}}" alt="" width="100px" height="100px"></td>
                         @if($item->delivery_status == 'processing')
                             <td>
-                                <a onclick="return confirm('Are you sure to remove this cart?')" class="btn btn-danger btn_deg" href="{{url('/cancel_order', $item->id)}}">Cancel Order</a>
+                                <a onclick="return confirm('Bạn có chắc muốn xóa?')" class="btn btn-danger btn_deg" href="{{url('/cancel_order', $item->id)}}">Hủy đơn hàng</a>
                             </td>
                         @endif
                     </tr>

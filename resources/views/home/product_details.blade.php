@@ -40,32 +40,32 @@
             </h5>
             @if($product->discount_price != null)
                 <h6 style="color:red;">
-                    Discount Price:
+                    Giá ưu đãi:
                     <br>
                     ${{$product->discount_price}}
                 </h6>
                 <h6 style="text-decoration: line-through;color:blue;">
-                    Price:
+                    Giá gốc:
                     <br>
                     ${{$product->price}}
                 </h6>
             @else
                 <h6 style="color:blue;">
-                    Price:
+                    Giá:
                     <br>
                     ${{$product->price}}
                 </h6>
             @endif
             <h6 style="color:blue;">
-                Category:
+                Loại hàng:
                 {{$product->catagory}}
             </h6>
             <h6 style="color:blue;">
-                Description:
+                Mô tả:
                 {{$product->description}}
             </h6>
             <h6 style="color:blue;">
-                Availble Quantity:
+                Số lương còn lại:
                 {{$product->quantity}}
             </h6>
 
@@ -76,7 +76,7 @@
                         <input type="number" name="quantity" value="1" min="1" style="width: 100px;">
                     </div>
                     <div class="col-md-4">
-                        <input type="submit" value="Add To Cart">
+                        <input type="submit" value="Thêm vào giỏ hàng">
                     </div>
                 </div>
             </form>

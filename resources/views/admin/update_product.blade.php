@@ -49,38 +49,38 @@
             @endif
 
             <div class="div_center">
-                <h1 class="font_size">Update Product</h1>
+                <h1 class="font_size">Sửa sản phẩm</h1>
 
                 <form action="{{url('/update_product_confirm', $product->id)}}" method="post" enctype="multipart/form-data">
                     @csrf
 
                     <div class="div_design">
-                        <label>Product title</label>
+                        <label>Tên sản phẩm</label>
                         <input class="text_color" type="text" name="title" value="{{$product->title}}" required="">
                     </div>
 
                     <div class="div_design">
-                        <label>Product Description</label>
+                        <label>Mô tả sản phẩm</label>
                         <input class="text_color" type="text" name="description" value="{{$product->description}}" required="">
                     </div>
 
                     <div class="div_design">
-                        <label>Product Price</label>
+                        <label>Giá</label>
                         <input class="text_color" type="number" name="price" value="{{$product->price}}" required="">
                     </div>
 
                     <div class="div_design">
-                        <label>Discount Price</label>
+                        <label>Giá ưu đãi</label>
                         <input class="text_color" type="number" name="discount_price" value="{{$product->discount_price}}">
                     </div>
 
                     <div class="div_design">
-                        <label>Product Quantity</label>
+                        <label>Số lượng</label>
                         <input class="text_color" type="number" min="0" name="quantity" value="{{$product->quantity}}" required="">
                     </div>
 
                     <div class="div_design">
-                        <label>Product Catagory</label>
+                        <label>Danh mục</label>
                         <select class="text_color" name="catagory" id="" required="">
                             <option value="{{$product->catagory}}" selected="">{{$product->catagory}}</option>
                             @foreach($catagory as $catagory)
@@ -92,12 +92,12 @@
                     </div>
 
                     <div class="div_design">
-                        <label>Current Product Image</label>
+                        <label>Ảnh hiện tại</label>
                         <img style="margin: auto;" height="100" width="100" src="/product/{{$product->image}}" alt="">
                     </div>
 
                     <div class="div_design">
-                        <label>Change Product Image</label>
+                        <label>Thay đổi ảnh</label>
                         <input type="file" name="image">
                     </div>
 

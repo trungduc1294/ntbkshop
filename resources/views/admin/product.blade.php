@@ -79,45 +79,45 @@
             @endif
 
             <div class="div_center">
-                <h1 class="font_size">Add Product</h1>
+                <h1 class="font_size">Thêm sản phẩm</h1>
 
                 <form action="{{url('/add_product')}}" method="post" enctype="multipart/form-data">
                     @csrf
 
                     <div class="div_design">
                         <label>Product id</label>
-                        <input class="text_color" type="number" name="id" placeholder="Write a id" required="">
+                        <input class="text_color" type="number" name="id" placeholder="ID" required="">
                     </div>
 
                     <div class="div_design">
                         <label>Product title</label>
-                        <input class="text_color" type="text" name="title" placeholder="Write a title" required="">
+                        <input class="text_color" type="text" name="title" placeholder="Tên sản phẩm" required="">
                     </div>
 
                     <div class="div_design">
                         <label>Product Description</label>
-                        <input class="text_color" type="text" name="description" placeholder="Write a description" required="">
+                        <input class="text_color" type="text" name="description" placeholder="Mô tả" required="">
                     </div>
 
                     <div class="div_design">
                         <label>Product Price</label>
-                        <input class="text_color" type="number" name="price" placeholder="Write a price" required="">
+                        <input class="text_color" type="number" name="price" placeholder="Giá" required="">
                     </div>
 
                     <div class="div_design">
                         <label>Discount Price</label>
-                        <input class="text_color" type="number" name="discount_price" placeholder="Write a discount price">
+                        <input class="text_color" type="number" name="discount_price" placeholder="Giá ưu đãi (không cần)">
                     </div>
 
                     <div class="div_design">
                         <label>Product Quantity</label>
-                        <input class="text_color" type="number" min="0" name="quantity" placeholder="Write a quantity" required="">
+                        <input class="text_color" type="number" min="0" name="quantity" placeholder="Số lượng" required="">
                     </div>
 
                     <div class="div_design">
                         <label>Product Catagory</label>
                         <select class="text_color" name="catagory" id="" required="">
-                            <option value="" selected="">Add a catagory here</option>
+                            <option value="" selected="">Thêm danh mục sản phẩm</option>
                             @foreach($catagory as $catagory)
                                 <option value="{{$catagory->catagory_name}}">{{$catagory->catagory_name}}</option>
                             @endforeach

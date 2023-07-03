@@ -59,17 +59,17 @@
                     <br>
                     <label for="name">Tên ch TK:</label>
                     <input style="color: black" type="text" name="name" required="">
-                    <input type="submit" name="submit" class="btn btn-primary" value="Add QR Code">
+                    <input type="submit" name="submit" class="btn btn-primary" value="Thêm QR Code">
                 </form>
             </div>
 
             <table class="center">
                 <tr>
                     <th>Id</th>
-                    <th>QR Image</th>
-                    <th>Name</th>
+                    <th>QR </th>
+                    <th>Tên chủ tk</th>
                     <th>Action</th>
-                    <th>Show</th>
+                    <th>Lựa chọn</th>
                 </tr>
                 @foreach($qrCodes as $qrCode)
                     <tr>

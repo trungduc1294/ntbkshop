@@ -58,15 +58,15 @@
             <table class="center">
                 <tr class="th_color">
                     <th class="th_deg">ID</th>
-                    <th class="th_deg">Product Title</th>
-                    <th class="th_deg">Description</th>
-                    <th class="th_deg">Quantity</th>
-                    <th class="th_deg">Catagory</th>
-                    <th class="th_deg">Price</th>
-                    <th class="th_deg">Discount Price</th>
-                    <th class="th_deg">Product Image</th>
-                    <th class="th_deg">Delete</th>
-                    <th class="th_deg">Edit</th>
+                    <th class="th_deg">Tên sản phẩm</th>
+                    <th class="th_deg">Mô tả</th>
+                    <th class="th_deg">Số lượng</th>
+                    <th class="th_deg">Danh mục</th>
+                    <th class="th_deg">Giá</th>
+                    <th class="th_deg">Giá ưu đãi</th>
+                    <th class="th_deg">Hình ảnh</th>
+                    <th class="th_deg">Xóa</th>
+                    <th class="th_deg">Sửa</th>
                 </tr>
                 @foreach($products as $product)
                     <tr>
@@ -81,10 +81,10 @@
                             <img class="img_size" src="/product/{{$product->image}}">
                         </td>
                         <td>
-                            <a onclick="return confirm('Are you sure to delete it?')" class="btn btn-danger" href="{{url('delete_product', $product->id)}}">Delete</a>
+                            <a onclick="return confirm('Chắc chưa?')" class="btn btn-danger" href="{{url('delete_product', $product->id)}}">Xóa</a>
                         </td>
                         <td>
-                            <a class="btn btn-success" href="{{url('update_product', $product->id)}}">Edit</a>
+                            <a class="btn btn-success" href="{{url('update_product', $product->id)}}">Sửa</a>
                         </td>
                     </tr>
                 @endforeach

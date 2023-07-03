@@ -51,7 +51,7 @@
                 <form action="{{url('/add_catagory')}}" method="post">
                     @csrf
                     <input type="number" name="id" required="" placeholder="ID" style="color: #000">
-                    <input class="input_color" type="text" name="catagory" placeholder="Catagory name">
+                    <input class="input_color" type="text" name="catagory" placeholder="Tên danh mục">
                     <input type="submit" name="submit" class="btn btn-primary" value="Add Catagory">
                 </form>
             </div>
@@ -59,7 +59,7 @@
             <table class="center">
                 <tr>
                     <td>ID</td>
-                    <td>Catagory Name</td>
+                    <td>Tên danh mục</td>
                     <td>Action</td>
                 </tr>
                 @foreach($data as $data)
@@ -72,7 +72,7 @@
                                 href="{{url('delete_catagory', $data->id)}}"
                                 class="btn btn-danger"
                             >
-                                Delete
+                                Xóa
                             </a>
                         </td>
                     </tr>

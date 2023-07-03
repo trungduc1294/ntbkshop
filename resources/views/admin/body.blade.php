@@ -18,7 +18,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h6 class="text-muted font-weight-normal">Total Products</h6>
+                        <h6 class="text-muted font-weight-normal">Tổng sản phẩm:</h6>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h6 class="text-muted font-weight-normal">Total Orders</h6>
+                        <h6 class="text-muted font-weight-normal">Tổng đơn</h6>
                     </div>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h6 class="text-muted font-weight-normal">Total Customers</h6>
+                        <h6 class="text-muted font-weight-normal">Số người dùng</h6>
                     </div>
                 </div>
             </div>
@@ -78,7 +78,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h6 class="text-muted font-weight-normal">Total Revenue</h6>
+                        <h6 class="text-muted font-weight-normal">Doanh thu</h6>
                     </div>
                 </div>
             </div>
@@ -98,7 +98,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h6 class="text-muted font-weight-normal">Order Delivered</h6>
+                        <h6 class="text-muted font-weight-normal">Tổng đơn đã giao</h6>
                     </div>
                 </div>
             </div>
@@ -118,7 +118,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h6 class="text-muted font-weight-normal">Order Processing</h6>
+                        <h6 class="text-muted font-weight-normal">Tổng đơn đang xử lý</h6>
                     </div>
                 </div>
             </div>

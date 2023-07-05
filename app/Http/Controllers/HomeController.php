@@ -94,7 +94,7 @@ class HomeController extends Controller
                 }
 
                 $cart->save();
-                Alert::success('Product Added successfully', 'We have added your product to cart');
+                Alert::success('Thêm sản phẩm vào giỏ hàng thành công', 'bạn có thể thêm sản phẩm khác hoặc vào giỏ hàng để đặt hàng');
                 return redirect()->back();
             }
             else {
@@ -124,7 +124,7 @@ class HomeController extends Controller
                 $cart->image = $product->image;
                 $cart->quantity = $request->quantity;
                 $cart->save();
-                Alert::success('Product Added successfully', 'We have added your product to cart');
+                Alert::success('Thêm sản phẩm vào giỏ hàng thành công', 'bạn có thể thêm sản phẩm khác hoặc vào giỏ hàng để đặt hàng');
                 return redirect()->back();
             }
 
@@ -169,6 +169,9 @@ class HomeController extends Controller
 
         foreach ($data as $item) {
             $item->destination = $request->destination;
+//
+            $item->delivery_time = $request->delivery_time;
+            $item->note = $request->note;
             $item->save();
         }
 
@@ -202,6 +205,17 @@ class HomeController extends Controller
             $order->image = $item->image;
             $order->product_id = $item->product_id;
             $order->destination = $item->destination;
+            if ($item->delivery_time){
+                $order->delivery_time = $item->delivery_time;
+            }else{
+                $order->delivery_time = 'Bây giờ';
+            }
+
+            if ($item->note) {
+                $order->note = $item->note;
+            } else {
+                $order->note = 'Không có ghi chú';
+            }
 
             $order->payment_status = 'cash on delivery';
             $order->delivery_status = 'processing';

@@ -27,8 +27,8 @@
                                     {{$banners[0]->content}}
                                 </p>
                                 <div class="btn-box">
-                                    <a href="" class="btn1">
-                                        Shop Now
+                                    <a href="{{url('show_cart')}}" class="btn1">
+                                        Giỏ hàng của bạn
                                     </a>
                                 </div>
                             </div>

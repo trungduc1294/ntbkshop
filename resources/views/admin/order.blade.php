@@ -70,6 +70,8 @@
                     <th>Tên sản phẩm</th>
                     <th> Số lượng</th>
                     <th>Giá</th>
+                    <th>TG giao hàng</th>
+                    <th>Note</th>
 
                     <th>Phương thức thanh toaán</th>
                     <th>Ảnh</th>
@@ -88,6 +90,8 @@
                         <td>{{$order->product_title}}</td>
                         <td>{{$order->quantity}}</td>
                         <td>{{$order->price}}</td>
+                        <td>{{$order->delivery_time}}</td>
+                        <td>{{$order->note}}</td>
 
                         @if($order->delivery_status == "done" or $order->delivery_status == "cash payment done" or $order->delivery_status == "transfer payment done")
                             <td style="color: #00d25b">{{$order->delivery_status}}</td>

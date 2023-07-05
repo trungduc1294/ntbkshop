@@ -88,7 +88,9 @@
     <div class="center">
         <form action="{{url('post_destination_form')}}" method="post">
             @csrf
-            <input type="text" name="destination" placeholder="Nhập địa chỉ nhận hàng">
+            <input type="text" name="destination" placeholder="Nhập địa chỉ nhận hàng *">
+            <input type="text" name="delivery_time" placeholder="Thời gian nhận hàng (không bắt buộc)">
+            <input type="text" name="note" placeholder="Thêm ghi chú cho đơn hàng của bạn (không bắt buộc)">
             <input type="submit" value="Xác nhận">
         </form>
     </div>

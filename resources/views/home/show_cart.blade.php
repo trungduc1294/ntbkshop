@@ -111,7 +111,6 @@
 
                     <?php $totalPrice += $item->price ?>
             @endforeach
-
         </table>
 
         <div>
@@ -119,9 +118,9 @@
         </div>
 
         <div>
-            <h1 style="font-size: 24px; padding-bottom: 15px">Hãy lựa chọn địa chỉ giao hàng</h1>
+            <h1 style="font-size: 24px; padding-bottom: 15px">Hãy nhập thông tin giao hàng</h1>
 {{--            <a href="{{url('cash_order')}}" class="btn btn-danger">Tạo đơn</a>--}}
-            <a href="{{url('set_destination')}}" class="btn btn-danger">Địa chỉ giao hàng</a>
+            <a href="{{url('set_destination')}}" class="btn btn-danger">Thông tin giao hàng</a>
         </div>
     </div>
 
